@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+<%@page import="oracle.jdbc.driver.*"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.io.PrintWriter" %>
+<%@page import="java.sql.ResultSet" %>
+<%@page import="java.util.*" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery paginate example</title>
+  <link rel="stylesheet" href="css/pagination.css" type="text/css"/>
+  <h1> Pagination Example</h1>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/Demo_Project/WEB-INF/lib/jquery-paginate-master/jquery-paginate-master/jquery-paginate.js"></script>
+
+<body>
+
+<table id='myTable'>
+  <thead>
+    <tr>
+      <td>Index</td>
+      <td>Value</td>
+    </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>
+
+<script>
+  // Add some examples to the page
+  for(var i = 0; i < 36; ++i)
+    $('#myTable > tbody').append('<tr><td>' + i + '</td><td>' + i.toString(16) + '</td></tr>');
+
+  // Paginate it
+  $('#myTable').paginate({
+    limit: 10,
+    initialPage: 2
+  });
+</script>
+
+</body>
+</html>

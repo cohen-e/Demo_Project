@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Demo_Project</display-name>
+ <!-- use to connect to tomcat users 
+   <welcome-file-list>
+    <welcome-file>Validation</welcome-file> or vali
+  </welcome-file-list> -->
+  <welcome-file-list>
+    <welcome-file>Login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>action_page</display-name>
+    <servlet-name>action_page</servlet-name>
+    <servlet-class>com.example.action_page</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action_page</servlet-name>
+    <url-pattern>/action_page</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestDatabase</display-name>
+    <servlet-name>TestDatabase</servlet-name>
+    <servlet-class>com.example.TestDatabase</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestDatabase</servlet-name>
+    <url-pattern>/TestDatabase</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Validation</display-name>
+    <servlet-name>Validation</servlet-name>
+    <servlet-class>com.example.Validation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Validation</servlet-name>
+    <url-pattern>/Validation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Logout</display-name>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.example.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <resource-ref>
+    <res-ref-name>jdbc/MYDB</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+ <!-- Use to connect the login page to the tomcat users: I do not like this 
+ <security-constraint>
+    <display-name>JSP Demo Constraint</display-name>
+    <web-resource-collection>
+      <web-resource-name>cp</web-resource-name>
+      <description></description>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <description></description>
+      <role-name>tomcat</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <realm-name>file</realm-name>
+    <form-login-config>
+      <form-login-page>/Login.jsp</form-login-page>
+      <form-error-page>/error.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+  <security-role>
+    <description></description>
+    <role-name>tomcat</role-name>
+  </security-role> -->
+  <servlet>
+    <description></description>
+    <display-name>vali</display-name>
+    <servlet-name>vali</servlet-name>
+    <servlet-class>com.example.vali</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vali</servlet-name>
+    <url-pattern>/vali</url-pattern>
+  </servlet-mapping>
+  <error-page>
+  <error-code>404</error-code>
+  <location>error.jsp</location>
+  </error-page>
+</web-app>

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>  
+<a href="Logout">Logout</a> |  
+<a href="Home.jsp">Home</a>  
+<hr>  
+</body>
+</html>

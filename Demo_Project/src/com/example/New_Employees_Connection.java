@@ -1,0 +1,26 @@
+package com.example;
+
+import java.sql.*;
+
+
+public class New_Employees_Connection {
+
+private ResultSet rs;
+
+	protected void connection () throws SQLException, ClassNotFoundException {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection connection = DriverManager.getConnection(
+	 			"jdbc:oracle:thin:@192.168.200.10:1521:orcl", "coel09 as sysdba", "angang08"); 
+	 	 	Statement statement = connection.createStatement();
+	 	 	rs = statement.executeQuery("select * from coel09.new_employee_view");
+			
+	}
+	
+	public ResultSet getRS () throws ClassNotFoundException, SQLException {
+		connection();
+		return this.rs;
+		
+	}
+	
+}
+

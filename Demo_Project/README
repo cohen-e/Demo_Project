@@ -1,0 +1,20 @@
+For Project:
+	Create a Dynamic Project 
+
+For Startup Page :
+	edit welcome page on web.xml
+	
+Pagination:
+	Download jquery-paginate-master
+	follow instructions on pagination page
+	
+	
+CSS:
+	can create a css page and import it
+	edit pagination: use page-navigation a {} with settings 
+	text shadow black outline with white text
+	border-radius makes border edges rounded and loopy
+	for background url has to be wed address unless using <img src>
+	To make background img make html height and size = cover
+	
+	

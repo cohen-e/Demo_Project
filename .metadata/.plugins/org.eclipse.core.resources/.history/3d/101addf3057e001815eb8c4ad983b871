@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.example.Employees_Connection"%>
+
+<html>
+
+<head>
+<title>Employees Table</title>
+<link rel="stylesheet" href="css/database.css" type="text/css"/>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script src="js/jquery-paginate.js"></script>
+</head>
+	<%
+	if (session.getAttribute("user") == null){
+		response.sendRedirect("Login.jsp");
+	}
+	%>
+	
+<body>
+	<%
+		String print = request.getParameter("yes_to_print");
+		if (print != null && print.toString().equalsIgnoreCase("YES")) {
+			response.setContentType("application/vnd.ms-excel");
+			response.setHeader("Content-Disposition", "inline; filename=Employee_Info.xls");
+		}
+	%>
+	<%
+	if (print == null) {
+	%>
+	<H1>Employee Table and Information</H1>
+	<%
+	}
+	%>
+	<%
+		Employees_Connection ts = new Employees_Connection();
+		ResultSet rs = ts.getRS();
+	%>
+	
+	<table id='myTable' border="1" align="center">
+		<thead>
+			<tr bgcolor="lightblue">
+				<TH>Employee ID</TH>
+				<TH>First Name</TH>
+				<TH>Last Name</TH>
+				<TH>Email</TH>
+				<TH>Phone Number</TH>
+				<TH>Hire Date</TH>
+				<TH>Job ID</TH>
+				<TH>Salary</TH>
+				<TH>Commission Pct</TH>
+				<TH>Manager ID</TH>
+				<TH>Department ID</TH>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<%
+					while (rs.next()) {
+				%>
+				<TD><%=rs.getString(1)%></td>
+				<TD><%=rs.getString(2)%></td>
+				<TD><%=rs.getString(3)%></td>
+				<TD><%=rs.getString(4)%></td>
+				<TD><%=rs.getString(5)%></td>
+				<TD><%=rs.getString(6)%></td>
+				<TD><%=rs.getString(7)%></td>
+				<TD><%=rs.getString(8)%></td>
+				<TD><%=rs.getString(9)%></td>
+				<TD><%=rs.getString(10)%></td>
+				<TD><%=rs.getString(11)%></td>
+			</tr>
+			<%
+				}
+			%>
+
+		</tbody>
+	</table>
+
+	<script>
+		$('#myTable').paginate({
+			limit : 10,
+			onSelect : function(obj, page) {
+				console.log('Page ' + page + ' selected!');
+			}
+		});
+	</script>
+	
+	<br />
+	<%
+	if (print == null) {
+	%>
+	<button type="button" onclick="location.href= '/Demo_Project/myJsp.jsp';">Main Menu</button>
+	<button type="button" onclick="location.href= '/Demo_Project/TestDatabase';">Java	Class Database</button>
+	<button type="button" onclick="window.print();">Print Current Page</button>
+	<a href="Database.jsp?yes_to_print=YES"><button>Print Table</button></a>
+	<br></br>
+	<p>This page incorporates print. The Print Table button prints the entire table in Excel 
+		without the buttons and header.</p>
+	<%
+	}
+	%>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body, html{
+	height: 100%;
+	}
+	
+table {
+    font-family: arial;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th, tr {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+	}
+	
+td{
+	background-color: lightgreen;
+}
+.page-navigation a {
+  margin: 0 2px;
+  display: inline-block;
+  padding: 3px 5px;
+  color: black;
+  background-color: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+ 
+.page-navigation a[data-selected] {
+  background-color: #4CAF50;
+  color: white;
+  
+}
+/* .page-navigation a:hover:not(.active) {background-color: #ddd; } */

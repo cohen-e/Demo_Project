@@ -1,0 +1,36 @@
+table {
+    font-family: arial;
+    border-collapse: collapse;
+    width: 100%;
+   
+}
+td, th, tr {
+    border: 5px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    
+	}
+body, html{
+	height: 100%;
+	}
+body {
+    background-image: url("https://www.w3schools.com/css/paris.jpg");
+    background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-color: #ffedb3;
+}
+.page-navigation a {
+  margin: 0 2px;
+  display: inline-block;
+  padding: 3px 5px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.page-navigation a[data-selected] {
+  background-color: #4CAF50;
+}

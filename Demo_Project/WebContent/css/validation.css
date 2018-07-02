@@ -1,0 +1,17 @@
+
+table {
+    font-family: arial;
+    border-collapse: collapse;
+    width: 50%;
+}
+td, th, tr {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 2px;
+	}
+	
+body{
+	font-family: verdana;
+	font-weight: 200;
+	font-size: 15px;
+}
